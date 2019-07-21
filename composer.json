@@ -1,0 +1,36 @@
+{
+    "name": "getpop/migrate-configurationengine",
+    "type": "library",
+    "description": "(Temporary package) Migrate code to package https://github.com/getpop/configurationengine. Target package description: Adds the configuration level to the component hierarchy, through which the data API can be extended into an application",
+    "keywords": [
+        "PoP",
+        "configurationengine"
+    ],
+    "homepage": "https://github.com/getpop/migrate-configurationengine",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonardo Losoviz",
+            "email": "leo@getpop.org",
+            "homepage": "https://getpop.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php" : "~7.1"
+    },
+    "autoload": {
+        "files": [
+            "initialize.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
