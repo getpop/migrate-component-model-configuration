@@ -20,8 +20,6 @@ Via Composer
 $ composer require getpop/migrate-configurationengine
 ```
 
-([PoP](https://github.com/leoloso/PoP) must be installed)
-
 <!--
 ## Usage
 
