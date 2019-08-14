@@ -94,13 +94,32 @@ class Engine extends \PoP\Engine\Engine
                 $mutableonrequest_settings ?? array()
             )
             ) {
-                // For the API: maybe remove the entry module from the output
-                $combined_settings = $this->maybeRemoveEntryModuleFromOutput($combined_settings);
                 $ret['modulesettings'] = $has_extra_routes ? array($current_uri => $combined_settings) : $combined_settings;
             }
         }
 
         return $ret;
+    }
+
+    // Allow PoPWebPlatform_Engine to override this function
+    protected function getEncodedDataObject($data)
+    {
+        $data = parent::getEncodedDataObject($data);
+
+        // For the API: maybe remove the entry module from the output
+        $vars = Engine_Vars::getVars();
+        if ($vars['dataoutputmode'] == GD_URLPARAM_DATAOUTPUTMODE_COMBINED) {
+            if ($data['modulesettings']) {
+                $data['modulesettings'] = $this->maybeRemoveEntryModuleFromOutput($data['modulesettings']);
+            }
+        }
+
+        // Comment Leo 14/09/2018: Re-enable here:
+        // if (true) {
+        //     unset($data['combinedstatedata']);
+        // }
+
+        return $data;
     }
 }
 
