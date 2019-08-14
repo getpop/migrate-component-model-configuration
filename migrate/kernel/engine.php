@@ -107,7 +107,7 @@ class Engine extends \PoP\Engine\Engine
         $data = parent::getEncodedDataObject($data);
 
         // For the API: maybe remove the entry module from the output
-        $vars = Engine_Vars::getVars();
+        $vars = \PoP\Engine\Engine_Vars::getVars();
         if ($vars['dataoutputmode'] == GD_URLPARAM_DATAOUTPUTMODE_COMBINED) {
             if ($data['modulesettings']) {
                 $data['modulesettings'] = $this->maybeRemoveEntryModuleFromOutput($data['modulesettings']);
