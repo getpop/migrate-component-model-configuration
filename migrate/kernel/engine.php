@@ -42,7 +42,7 @@ class Engine extends \PoP\Engine\Engine
         $moduleprocessor_manager = \PoP\Engine\ModuleProcessorManagerFactory::getInstance();
         $processor = $moduleprocessor_manager->getProcessor($module);
         $cachemanager = PersistentCacheFacade::getInstance();
-        
+
         // From the state we know if to process static/staful content or both
         $vars = \PoP\Engine\Engine_Vars::getVars();
         $datasources = $vars['datasources'];
@@ -94,6 +94,8 @@ class Engine extends \PoP\Engine\Engine
                 $mutableonrequest_settings ?? array()
             )
             ) {
+                // For the API: maybe remove the entry module from the output
+                $combined_settings = $this->maybeRemoveEntryModuleFromOutput($combined_settings);
                 $ret['modulesettings'] = $has_extra_routes ? array($current_uri => $combined_settings) : $combined_settings;
             }
         }
