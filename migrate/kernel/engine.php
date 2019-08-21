@@ -52,7 +52,7 @@ class Engine extends \PoP\ComponentModel\Engine
         $add_settings = in_array(GD_URLPARAM_DATAOUTPUTITEMS_MODULESETTINGS, $dataoutputitems);
 
         // First check if there's a cache stored
-        $useCache = \PoP\Engine\Server\Utils::useCache();
+        $useCache = \PoP\ComponentModel\Server\Utils::useCache();
         if ($useCache) {
             $immutable_settings = $cachemanager->getCacheByModelInstance(POP_CACHETYPE_IMMUTABLESETTINGS);
             $mutableonmodel_settings = $cachemanager->getCacheByModelInstance(POP_CACHETYPE_STATEFULSETTINGS);
