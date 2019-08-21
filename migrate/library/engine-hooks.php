@@ -7,12 +7,12 @@ class VarsHooks
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\Engine\Engine_Vars:dataoutputitems', 
+            '\PoP\ComponentModel\Engine_Vars:dataoutputitems', 
             [$this, 'getDataOutputItems'],
             0
         );
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\Engine\Engine_Vars:default-dataoutputitems', 
+            '\PoP\ComponentModel\Engine_Vars:default-dataoutputitems', 
             [$this, 'getDefaultDataOutputItems'],
             0
         );

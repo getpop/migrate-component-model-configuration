@@ -1,15 +1,15 @@
 <?php
 namespace PoP\ConfigurationEngine;
-use PoP\Engine\Facades\PersistentCacheFacade;
+use PoP\ComponentModel\Facades\PersistentCacheFacade;
 
-class Engine extends \PoP\Engine\Engine
+class Engine extends \PoP\ComponentModel\Engine
 {
     protected function processAndGenerateData()
     {
         parent::processAndGenerateData();
 
         // Validate that the strata includes the required stratum
-        $vars = \PoP\Engine\Engine_Vars::getVars();
+        $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         if (!in_array(POP_STRATUM_CONFIGURATION, $vars['strata'])) {
             return;
         }
@@ -39,12 +39,12 @@ class Engine extends \PoP\Engine\Engine
     {
         $ret = array();
 
-        $moduleprocessor_manager = \PoP\Engine\ModuleProcessorManagerFactory::getInstance();
+        $moduleprocessor_manager = \PoP\ComponentModel\ModuleProcessorManagerFactory::getInstance();
         $processor = $moduleprocessor_manager->getProcessor($module);
         $cachemanager = PersistentCacheFacade::getInstance();
 
         // From the state we know if to process static/staful content or both
-        $vars = \PoP\Engine\Engine_Vars::getVars();
+        $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         $datasources = $vars['datasources'];
         $dataoutputmode = $vars['dataoutputmode'];
         $dataoutputitems = $vars['dataoutputitems'];
@@ -107,7 +107,7 @@ class Engine extends \PoP\Engine\Engine
         $data = parent::getEncodedDataObject($data);
 
         // For the API: maybe remove the entry module from the output
-        $vars = \PoP\Engine\Engine_Vars::getVars();
+        $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         if ($vars['dataoutputmode'] == GD_URLPARAM_DATAOUTPUTMODE_COMBINED) {
             if ($data['modulesettings']) {
                 $data['modulesettings'] = $this->maybeRemoveEntryModuleFromOutput($data['modulesettings']);

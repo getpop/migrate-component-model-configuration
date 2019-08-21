@@ -1,8 +1,8 @@
 <?php
 namespace PoP\ConfigurationEngine;
-use PoP\Engine\ModuleUtils;
+use PoP\ComponentModel\ModuleUtils;
 
-abstract class ModuleProcessorBase extends \PoP\Engine\ModuleProcessorBase
+abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBase
 {
     //-------------------------------------------------
     // New PUBLIC Functions: Model Static Settings

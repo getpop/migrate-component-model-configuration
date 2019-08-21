@@ -3,5 +3,5 @@ namespace PoP\ConfigurationEngine;
 
 abstract class QueryDataModuleProcessorBase extends ModuleProcessorBase
 {
-    use \PoP\Engine\QueryDataModuleProcessorTrait;
+    use \PoP\ComponentModel\QueryDataModuleProcessorTrait;
 }
