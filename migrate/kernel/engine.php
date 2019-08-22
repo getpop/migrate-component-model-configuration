@@ -41,8 +41,10 @@ class Engine extends \PoP\ComponentModel\Engine
 
         $moduleprocessor_manager = \PoP\ComponentModel\ModuleProcessorManagerFactory::getInstance();
         $processor = $moduleprocessor_manager->getProcessor($module);
-        $cachemanager = PersistentCacheFacade::getInstance();
-        $useCache = !is_null($cachemanager) && \PoP\ComponentModel\Server\Utils::useCache();
+        if ($useCache = \PoP\ComponentModel\Server\Utils::useCache()) {
+            $cachemanager = PersistentCacheFacade::getInstance();
+            $useCache = !is_null($cachemanager);
+        }
 
         // From the state we know if to process static/staful content or both
         $vars = \PoP\ComponentModel\Engine_Vars::getVars();
