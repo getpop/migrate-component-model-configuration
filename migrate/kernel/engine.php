@@ -42,6 +42,7 @@ class Engine extends \PoP\ComponentModel\Engine
         $moduleprocessor_manager = \PoP\ComponentModel\ModuleProcessorManagerFactory::getInstance();
         $processor = $moduleprocessor_manager->getProcessor($module);
         $cachemanager = PersistentCacheFacade::getInstance();
+        $useCache = !is_null($cachemanager) && \PoP\ComponentModel\Server\Utils::useCache();
 
         // From the state we know if to process static/staful content or both
         $vars = \PoP\ComponentModel\Engine_Vars::getVars();
@@ -52,7 +53,6 @@ class Engine extends \PoP\ComponentModel\Engine
         $add_settings = in_array(GD_URLPARAM_DATAOUTPUTITEMS_MODULESETTINGS, $dataoutputitems);
 
         // First check if there's a cache stored
-        $useCache = \PoP\ComponentModel\Server\Utils::useCache();
         if ($useCache) {
             $immutable_settings = $cachemanager->getCacheByModelInstance(POP_CACHETYPE_IMMUTABLESETTINGS);
             $mutableonmodel_settings = $cachemanager->getCacheByModelInstance(POP_CACHETYPE_STATEFULSETTINGS);
