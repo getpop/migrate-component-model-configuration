@@ -3,7 +3,7 @@ namespace PoP\ConfigurationComponentModel;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
-define('POP_CONFIGURATIONENGINE_POP_ENGINE_MIN_VERSION', 0.1);
+define('POP_CONFIGURATIONCOMPONENTMODEL_POP_ENGINE_MIN_VERSION', 0.1);
 
 class PoPEngineConfiguration_Validation
 {
@@ -19,7 +19,7 @@ class PoPEngineConfiguration_Validation
             HooksAPIFacade::getInstance()->addAction('admin_notices', array($this, 'initializeWarning'));
             HooksAPIFacade::getInstance()->addAction('network_admin_notices', array($this, 'initializeWarning'));
             $success = false;
-        } elseif (POP_CONFIGURATIONENGINE_POP_ENGINE_MIN_VERSION > POP_ENGINE_VERSION) {
+        } elseif (POP_CONFIGURATIONCOMPONENTMODEL_POP_ENGINE_MIN_VERSION > POP_ENGINE_VERSION) {
             HooksAPIFacade::getInstance()->addAction('admin_notices', array($this, 'versionWarning'));
             HooksAPIFacade::getInstance()->addAction('network_admin_notices', array($this, 'versionWarning'));
         }
@@ -47,7 +47,7 @@ class PoPEngineConfiguration_Validation
             TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-component-model-configuration'),
             TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-component-model-configuration'),
             'https://github.com/leoloso/PoP',
-            POP_CONFIGURATIONENGINE_POP_ENGINE_MIN_VERSION
+            POP_CONFIGURATIONCOMPONENTMODEL_POP_ENGINE_MIN_VERSION
         );
     }
     protected function providerinstall_warning_notice($plugin)

@@ -12,8 +12,8 @@ use PoP\Hooks\Facades\HooksAPIFacade;
 //-------------------------------------------------------------------------------------
 // Constants Definition
 //-------------------------------------------------------------------------------------
-define('POP_CONFIGURATIONENGINE_VERSION', 0.160);
-define('POP_CONFIGURATIONENGINE_DIR', dirname(__FILE__));
+define('POP_CONFIGURATIONCOMPONENTMODEL_VERSION', 0.160);
+define('POP_CONFIGURATIONCOMPONENTMODEL_DIR', dirname(__FILE__));
 
 class Plugin
 {
@@ -24,11 +24,11 @@ class Plugin
     public function init()
     {
         // Allow other plug-ins to modify the plugins_url path (eg: pop-aws adding the CDN)
-        define('POP_CONFIGURATIONENGINE_URL', plugins_url('', __FILE__));
+        define('POP_CONFIGURATIONCOMPONENTMODEL_URL', plugins_url('', __FILE__));
 
         if ($this->validate()) {
             $this->initialize();
-            define('POP_CONFIGURATIONENGINE_INITIALIZED', true);
+            define('POP_CONFIGURATIONCOMPONENTMODEL_INITIALIZED', true);
         }
     }
     public function validate()
