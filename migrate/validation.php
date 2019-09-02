@@ -4,7 +4,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 define('POP_CONFIGURATIONENGINE_POP_ENGINE_MIN_VERSION', 0.1);
-        
+
 class PoPEngineConfiguration_Validation
 {
     public function validate()
@@ -29,23 +29,23 @@ class PoPEngineConfiguration_Validation
     public function initializeWarning()
     {
         $this->dependencyInitializationWarning(
-            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-configurationengine'),
-            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-configurationengine')
+            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-component-model-configuration'),
+            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-component-model-configuration')
         );
     }
     public function installWarning()
     {
         $this->dependencyInstallationWarning(
-            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-configurationengine'),
-            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-configurationengine'),
+            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-component-model-configuration'),
+            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-component-model-configuration'),
             'https://github.com/leoloso/PoP'
         );
     }
     public function versionWarning()
     {
         $this->dependencyVersionWarning(
-            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-configurationengine'),
-            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-configurationengine'),
+            TranslationAPIFacade::getInstance()->__('PoP Configuration Engine', 'pop-component-model-configuration'),
+            TranslationAPIFacade::getInstance()->__('PoP Engine', 'pop-component-model-configuration'),
             'https://github.com/leoloso/PoP',
             POP_CONFIGURATIONENGINE_POP_ENGINE_MIN_VERSION
         );
@@ -54,9 +54,9 @@ class PoPEngineConfiguration_Validation
     {
         $this->adminNotice(
             sprintf(
-                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-configurationengine'),
+                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-component-model-configuration'),
                 sprintf(
-                    TranslationAPIFacade::getInstance()->__('There is no provider (underlying implementation) for <strong>%s</strong>.', 'pop-configurationengine'),
+                    TranslationAPIFacade::getInstance()->__('There is no provider (underlying implementation) for <strong>%s</strong>.', 'pop-component-model-configuration'),
                     $plugin
                 )
             )
@@ -66,9 +66,9 @@ class PoPEngineConfiguration_Validation
     {
         $this->adminNotice(
             sprintf(
-                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-configurationengine'),
+                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-component-model-configuration'),
                 sprintf(
-                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> is not installed/activated. Without it, <strong>%s</strong> will not work. Please install this plugin from your plugin installer or download it <a href="%s" target="_blank">from here</a>.', 'pop-configurationengine'),
+                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> is not installed/activated. Without it, <strong>%s</strong> will not work. Please install this plugin from your plugin installer or download it <a href="%s" target="_blank">from here</a>.', 'pop-component-model-configuration'),
                     $dependency,
                     $plugin,
                     $dependency_url
@@ -80,9 +80,9 @@ class PoPEngineConfiguration_Validation
     {
         $this->adminNotice(
             sprintf(
-                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-configurationengine'),
+                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-component-model-configuration'),
                 sprintf(
-                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> is not initialized properly. As a consequence, <strong>%s</strong> has not been loaded.', 'pop-configurationengine'),
+                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> is not initialized properly. As a consequence, <strong>%s</strong> has not been loaded.', 'pop-component-model-configuration'),
                     $dependency,
                     $plugin
                 )
@@ -93,9 +93,9 @@ class PoPEngineConfiguration_Validation
     {
         $this->adminNotice(
             sprintf(
-                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-configurationengine'),
+                TranslationAPIFacade::getInstance()->__('Error: %s', 'pop-component-model-configuration'),
                 sprintf(
-                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> requires version %s or bigger of <strong>%s</strong>. Please update this plugin from your plugin installer or download it <a href="%s" target="_blank">from here</a>.', 'pop-configurationengine'),
+                    TranslationAPIFacade::getInstance()->__('<strong>%s</strong> requires version %s or bigger of <strong>%s</strong>. Please update this plugin from your plugin installer or download it <a href="%s" target="_blank">from here</a>.', 'pop-component-model-configuration'),
                     $plugin,
                     $dependency_min_version,
                     $dependency,
@@ -111,7 +111,7 @@ class PoPEngineConfiguration_Validation
 			<p>
 				<?php echo $message ?><br/>
 				<em>
-					<?php _e('Only admins see this message.', 'pop-configurationengine'); ?>
+					<?php _e('Only admins see this message.', 'pop-component-model-configuration'); ?>
 				</em>
 			</p>
 		</div>

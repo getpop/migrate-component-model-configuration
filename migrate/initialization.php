@@ -5,7 +5,7 @@ class Initialization
 {
     public function initialize()
     {
-        load_plugin_textdomain('pop-configurationengine', false, dirname(plugin_basename(__FILE__)).'/languages');
+        load_plugin_textdomain('pop-component-model-configuration', false, dirname(plugin_basename(__FILE__)).'/languages');
 
         /**
          * Load the Kernel

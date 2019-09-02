@@ -11,7 +11,7 @@ $class = (new class() extends \PoP\Root\Component\AbstractComponent
         parent::boot();
 
         // Initialize code
-        require_once 'migrate/pop-configurationengine.php';  
+        require_once 'migrate/pop-component-model-configuration.php';
     }
 });
 $class::init();
