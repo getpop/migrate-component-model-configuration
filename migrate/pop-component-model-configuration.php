@@ -6,7 +6,7 @@ Description: Front-end module for the Platform of Platforms
 Plugin URI: https://getpop.org/
 Author: Leonardo Losoviz
 */
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 //-------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 <?php
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 use PoP\ComponentModel\ModuleUtils;
 
 abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBase
@@ -16,7 +16,7 @@ abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBa
     public function getImmutableSettings(array $module, array &$props)
     {
         $ret = array();
-        
+
         if ($configuration = $this->getImmutableConfiguration($module, $props)) {
             $ret['configuration'] = $configuration;
         }
@@ -24,7 +24,7 @@ abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBa
         if ($database_keys = $this->getDatabaseKeys($module, $props)) {
             $ret['dbkeys'] = $database_keys;
         }
-        
+
         return $ret;
     }
 
@@ -54,11 +54,11 @@ abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBa
     public function getMutableonmodelSettings(array $module, array &$props)
     {
         $ret = array();
-        
+
         if ($configuration = $this->getMutableonmodelConfiguration($module, $props)) {
             $ret['configuration'] = $configuration;
         }
-        
+
         return $ret;
     }
 
@@ -79,11 +79,11 @@ abstract class ModuleProcessorBase extends \PoP\ComponentModel\ModuleProcessorBa
     public function getMutableonrequestSettings(array $module, array &$props)
     {
         $ret = array();
-        
+
         if ($configuration = $this->getMutableonrequestConfiguration($module, $props)) {
             $ret['configuration'] = $configuration;
         }
-        
+
         return $ret;
     }
 

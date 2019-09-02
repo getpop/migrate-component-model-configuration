@@ -1,5 +1,5 @@
 <?php
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 use PoP\ComponentModel\Facades\PersistentCacheFacade;
 
 class Engine extends \PoP\ComponentModel\Engine

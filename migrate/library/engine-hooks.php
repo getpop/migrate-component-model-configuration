@@ -1,5 +1,5 @@
 <?php
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 class VarsHooks
@@ -7,32 +7,32 @@ class VarsHooks
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\ComponentModel\Engine_Vars:dataoutputitems', 
+            '\PoP\ComponentModel\Engine_Vars:dataoutputitems',
             [$this, 'getDataOutputItems'],
             0
         );
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\ComponentModel\Engine_Vars:default-dataoutputitems', 
+            '\PoP\ComponentModel\Engine_Vars:default-dataoutputitems',
             [$this, 'getDefaultDataOutputItems'],
             0
         );
     }
-    
+
     public function getDataOutputItems($dataoutputitems)
     {
         $dataoutputitems[] = GD_URLPARAM_DATAOUTPUTITEMS_MODULESETTINGS;
         return $dataoutputitems;
     }
-    
+
     public function getDefaultDataOutputItems($dataoutputitems)
     {
         // Replace the DatasetSettings with Settings
         array_splice(
-            $dataoutputitems, 
+            $dataoutputitems,
             array_search(
-                GD_URLPARAM_DATAOUTPUTITEMS_DATASETMODULESETTINGS, 
+                GD_URLPARAM_DATAOUTPUTITEMS_DATASETMODULESETTINGS,
                 $dataoutputitems
-            ), 
+            ),
             1,
             [
                 GD_URLPARAM_DATAOUTPUTITEMS_MODULESETTINGS,

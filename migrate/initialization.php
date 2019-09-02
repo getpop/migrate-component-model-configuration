@@ -1,5 +1,5 @@
 <?php
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 
 class Initialization
 {

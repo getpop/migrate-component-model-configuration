@@ -1,5 +1,5 @@
 <?php
-namespace PoP\ConfigurationEngine;
+namespace PoP\ConfigurationComponentModel;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
