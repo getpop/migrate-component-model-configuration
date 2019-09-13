@@ -4,7 +4,7 @@ class PoP_ConfigurationComponentModel_Module_Processor_Elements extends \PoP\Con
 {
     public const MODULE_EMPTY = 'empty';
 
-    public function getModulesToProcess()
+    public function getModulesToProcess(): array
     {
         return array(
             [self::class, self::MODULE_EMPTY],
