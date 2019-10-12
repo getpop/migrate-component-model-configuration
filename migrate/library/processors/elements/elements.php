@@ -1,6 +1,7 @@
 <?php
+use PoP\ConfigurationComponentModel\ModuleProcessors\AbstractModuleProcessor;
 
-class PoP_ConfigurationComponentModel_Module_Processor_Elements extends \PoP\ConfigurationComponentModel\ModuleProcessorBase
+class PoP_ConfigurationComponentModel_Module_Processor_Elements extends AbstractModuleProcessor
 {
     public const MODULE_EMPTY = 'empty';
 
