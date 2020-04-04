@@ -1,5 +1,6 @@
 <?php
 namespace PoP\ConfigurationComponentModel;
+
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 class VarsHooks
@@ -7,12 +8,12 @@ class VarsHooks
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\ComponentModel\Engine_Vars:dataoutputitems',
+            'ApplicationState:dataoutputitems',
             [$this, 'getDataOutputItems'],
             0
         );
         HooksAPIFacade::getInstance()->addFilter(
-            '\PoP\ComponentModel\Engine_Vars:default-dataoutputitems',
+            'ApplicationState:default-dataoutputitems',
             [$this, 'getDefaultDataOutputItems'],
             0
         );
