@@ -1,6 +1,6 @@
 # (Temporary package) Migrate code to package: Configuration Engine
 
-Code to be migrated, from legacy PHP 5 code to modern PHP 7 code ([read more here](https://github.com/leoloso/PoP#codebase-migration)). Target package description:  Adds the configuration level to the component hierarchy, through which the data API can be extended into an application
+Code to be migrated, from legacy to modern PHP code ([read more here](https://github.com/leoloso/PoP#codebase-migration)). Target package description:  Adds the configuration level to the component hierarchy, through which the data API can be extended into an application
 
 ## Install
 
@@ -9,6 +9,10 @@ Via Composer
 ``` bash
 composer require getpop/migrate-component-model-configuration
 ```
+
+## Development
+
+The source code is hosted on the [PoP monorepo](https://github.com/leoloso/PoP), under [`SiteBuilder/packages/migrate-component-model-configuration`](https://github.com/leoloso/PoP/tree/master/layers/SiteBuilder/packages/migrate-component-model-configuration).
 
 ## Security
 
@@ -36,4 +40,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-code-quality]: https://scrutinizer-ci.com/g/getpop/component-model-configuration
 [link-downloads]: https://packagist.org/packages/getpop/component-model-configuration
 [link-author]: https://github.com/leoloso
-[link-contributors]: ../../contributors
+[link-contributors]: ../../../../../../contributors
